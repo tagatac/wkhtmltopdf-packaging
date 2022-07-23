@@ -49,7 +49,7 @@ jobs:
       - name: checkout wkhtmltopdf with submodules
         uses: actions/checkout@v2
         with:
-          repository: wkhtmltopdf/wkhtmltopdf
+          repository: tagatac/wkhtmltopdf
           path: wkhtmltopdf
           submodules: true
           ref: ${{ github.event.inputs.wkhtmltopdf_ref }}
@@ -63,4 +63,4 @@ jobs:
           files: "packaging/targets/wkhtmltox*.*"
           fail_on_unmatched_files: false
           draft: true
-          body: All packages were built and uploaded automatically as a part of [this run](${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}), using this [wkhtmltopdf branch/tag](https://github.com/wkhtmltopdf/wkhtmltopdf/tree/${{ github.event.inputs.wkhtmltopdf_ref }}).
+          body: All packages were built and uploaded automatically as a part of [this run](${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}), using this [wkhtmltopdf branch/tag](https://github.com/tagatac/wkhtmltopdf/tree/${{ github.event.inputs.wkhtmltopdf_ref }}).

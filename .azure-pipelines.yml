@@ -84,7 +84,7 @@ jobs:
       python build docker-images $(target)
     displayName: 'setup build environment'
   - script: |
-      git clone --recurse-submodules https://github.com/wkhtmltopdf/wkhtmltopdf.git
+      git clone --recurse-submodules https://github.com/tagatac/wkhtmltopdf.git
       cd wkhtmltopdf && git checkout $(checkout) && git submodule update
     displayName: 'clone wkhtmltopdf'
   - script: python build package-docker --clean --iteration $(iteration) $(target) wkhtmltopdf
@@ -125,7 +125,7 @@ jobs:
       cmd /c attrib "C:\Program Files (x86)\Windows Kits\10\include\wdf" +H
     displayName: 'install dependencies'
   - script: |
-      git clone --recurse-submodules https://github.com/wkhtmltopdf/wkhtmltopdf.git
+      git clone --recurse-submodules https://github.com/tagatac/wkhtmltopdf.git
       cd wkhtmltopdf && git checkout $(checkout) && git submodule update
     displayName: 'clone wkhtmltopdf'
   - script: python build vagrant $(target) --version - - --iteration $(iteration) wkhtmltopdf
@@ -161,7 +161,7 @@ jobs:
       sudo xcode-select --switch /Library/Developer/CommandLineTools
     displayName: 'install dependencies'
   - script: |
-      git clone --recurse-submodules https://github.com/wkhtmltopdf/wkhtmltopdf.git
+      git clone --recurse-submodules https://github.com/tagatac/wkhtmltopdf.git
       cd wkhtmltopdf && git checkout $(checkout) && git submodule update
       sed -i -e 's/CFLAGS CXXFLAGS LDFLAGS/CFLAGS CXXFLAGS OBJECTIVE_CFLAGS LDFLAGS/g' qt/configure
       sed -i -e 's/compiler.version=9.0/compiler.version=11.0/g' ../.conan/profiles/macos-cocoa
