@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       wkhtmltopdf_ref:
-        description: 'Branch/Tag to use from the wkhtmltopdf/wkhtmltopdf repository'
+        description: 'Branch/Tag to use from the tagatac/wkhtmltopdf repository'
         required: true
       packaging_release:
-        description: 'Release to create in wkhtmltopdf/packaging repository'
+        description: 'Release to create in tagatac/wkhtmltopdf-packaging repository'
         required: true
       packaging_iteration:
         description: 'Iteration (useful for tagged releases)'
