@@ -162,7 +162,7 @@ jobs:
       git clone --recurse-submodules https://github.com/tagatac/wkhtmltopdf.git
       cd wkhtmltopdf && git checkout $(checkout) && git submodule update
       sed -i -e 's/CFLAGS CXXFLAGS LDFLAGS/CFLAGS CXXFLAGS OBJECTIVE_CFLAGS LDFLAGS/g' qt/configure
-      sed -i -e 's/compiler.version=9.0/compiler.version=11.0/g' ../.conan/profiles/macos-cocoa
+      sed -i -e 's/compiler.version=9.0/compiler.version=12.0/g' ../.conan/profiles/macos-cocoa
     displayName: 'clone wkhtmltopdf'
   - script: MACOSX_DEPLOYMENT_TARGET=10.7 python3 build vagrant $(target) --clean --version - - --iteration $(iteration) wkhtmltopdf
     displayName: 'build package'
